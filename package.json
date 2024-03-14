@@ -1,0 +1,35 @@
+{
+  "name": "bridge-contracts",
+  "version": "1.0.0",
+  "description": "Solidity smart contracts for Bridge between xx network and EVM chains",
+  "main": "index.js",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "types": "npx hardhat typechain",
+    "test": "npx hardhat --network hardhat test",
+    "test:gas": "REPORT_GAS=true npx hardhat --network hardhat test",
+    "coverage": "npx hardhat coverage",
+    "deploy:test": "npx hardhat run scripts/deploy_test.ts",
+    "deploy": "npx hardhat --network mainnet run scripts/deploy.ts",
+    "check": "npx hardhat --network mainnet run scripts/check.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xxfoundation/bridge-contracts.git"
+  },
+  "author": "xx foundation",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xxfoundation/bridge-contracts/issues"
+  },
+  "homepage": "https://github.com/xxfoundation/bridge-contracts#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "4.9.3"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ledger": "^1.0.2",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.21.0"
+  }
+}
