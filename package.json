@@ -11,7 +11,8 @@
     "coverage": "npx hardhat coverage",
     "start:geth": "./scripts/geth/start_geth.sh",
     "stop:geth": "./scripts/geth/stop_geth.sh",
-    "deploy": "npx hardhat run scripts/deploy.ts"
+    "deploy": "npx hardhat run scripts/deploy.ts",
+    "payfee": "npx hardhat run scripts/payfee.ts"
   },
   "repository": {
     "type": "git",
