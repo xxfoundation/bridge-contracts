@@ -16,7 +16,9 @@ async function main() {
   const fee = await relayerFeeReceiver.currentFee();
   console.log("Current fee:", fee.toString());
 
-  const tx = await relayerFeeReceiver.payFee(nonce, { value: fee });
+  const tx = await relayerFeeReceiver
+    .connect(sender)
+    .payFee(nonce, { value: fee });
   console.log(`Paying fee for nonce ${nonce} in transaction ${tx.hash}`);
   await tx.wait(1);
   console.log("Fee paid!");

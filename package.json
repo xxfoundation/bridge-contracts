@@ -12,7 +12,8 @@
     "start:geth": "./scripts/geth/start_geth.sh",
     "stop:geth": "./scripts/geth/stop_geth.sh",
     "deploy": "npx hardhat run scripts/deploy.ts",
-    "payfee": "npx hardhat run scripts/payfee.ts"
+    "payfee": "npx hardhat run scripts/payfee.ts",
+    "mint": "npx hardhat run scripts/mint.ts"
   },
   "repository": {
     "type": "git",
