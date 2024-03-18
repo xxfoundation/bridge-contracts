@@ -23,6 +23,9 @@ chainbridge
 # Wrapped XX repo
 wrappedxx
 
+# Go bindings
+go
+
 # IDE
 .vscode
 .idea

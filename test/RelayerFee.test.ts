@@ -6,6 +6,7 @@ import { RelayerFeeReceiver } from "../typechain-types";
 const ZERO_HASH =
   "0x0000000000000000000000000000000000000000000000000000000000000000";
 
+const DOMAIN_ZERO = "0x00";
 const NONCE_ZERO = "0x0000000000000000";
 const NONCE_MID = "0x8000000000000000";
 const NONCE_MAX = "0xffffffffffffffff";
@@ -99,7 +100,9 @@ describe("L1NS Payment Collector contract", function () {
     it("User cannot pay fee when contract is paused", async function () {
       await relayerFeeReceiver.pause();
       await expect(
-        relayerFeeReceiver.connect(addr1).payFee("0x0", { value: initialFee })
+        relayerFeeReceiver
+          .connect(addr1)
+          .payFee(DOMAIN_ZERO, NONCE_ZERO, { value: initialFee })
       ).to.be.revertedWith("Contract is paused");
     });
 
@@ -179,7 +182,7 @@ describe("L1NS Payment Collector contract", function () {
       const before = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       await relayerFeeReceiver
         .connect(addr1)
-        .payFee(NONCE_ZERO, { value: initialFee });
+        .payFee(DOMAIN_ZERO, NONCE_ZERO, { value: initialFee });
       const after = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       expect(after).to.equal(before + initialFee);
     });
@@ -189,7 +192,7 @@ describe("L1NS Payment Collector contract", function () {
       const before = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       await relayerFeeReceiver
         .connect(addr1)
-        .payFee(NONCE_MID, { value: initialFee });
+        .payFee(DOMAIN_ZERO, NONCE_MID, { value: initialFee });
       const after = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       expect(after).to.equal(before + initialFee);
     });
@@ -198,7 +201,7 @@ describe("L1NS Payment Collector contract", function () {
       const before = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       await relayerFeeReceiver
         .connect(addr1)
-        .payFee(NONCE_MAX, { value: initialFee });
+        .payFee(DOMAIN_ZERO, NONCE_MAX, { value: initialFee });
       const after = await ethers.provider.getBalance(relayerFeeReceiverAddr);
       expect(after).to.equal(before + initialFee);
     });
@@ -207,7 +210,7 @@ describe("L1NS Payment Collector contract", function () {
       await expect(
         relayerFeeReceiver
           .connect(addr1)
-          .payFee(NONCE_ZERO, { value: ethers.parseEther("0.02") })
+          .payFee(DOMAIN_ZERO, NONCE_ZERO, { value: ethers.parseEther("0.02") })
       ).to.be.revertedWith("Fee value is not correct");
     });
   });
@@ -224,7 +227,7 @@ describe("L1NS Payment Collector contract", function () {
       // Pay a fee
       await relayerFeeReceiver
         .connect(addr1)
-        .payFee("0x0", { value: initialFee });
+        .payFee(DOMAIN_ZERO, NONCE_ZERO, { value: initialFee });
       // Withdraw
       await expect(relayerFeeReceiver.withdraw(relayer.address)).to.not.be
         .reverted;
@@ -234,7 +237,7 @@ describe("L1NS Payment Collector contract", function () {
       // Pay a fee
       await relayerFeeReceiver
         .connect(addr1)
-        .payFee("0x0", { value: initialFee });
+        .payFee(DOMAIN_ZERO, NONCE_ZERO, { value: initialFee });
       // Withdraw
       const beforeDest = await ethers.provider.getBalance(relayer.address);
       await relayerFeeReceiver.withdraw(relayer.address);

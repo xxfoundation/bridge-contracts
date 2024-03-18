@@ -1,6 +1,7 @@
 import { ethers } from "hardhat";
 
 const address = "0x028152c03ad5E28dE97AEaf90f104C7eD42a47bB";
+const domain = 0;
 const nonce = 1;
 
 async function main() {
@@ -18,7 +19,7 @@ async function main() {
 
   const tx = await relayerFeeReceiver
     .connect(sender)
-    .payFee(nonce, { value: fee });
+    .payFee(domain, nonce, { value: fee });
   console.log(`Paying fee for nonce ${nonce} in transaction ${tx.hash}`);
   await tx.wait(1);
   console.log("Fee paid!");

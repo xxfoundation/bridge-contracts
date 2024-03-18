@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 
 contract RelayerFeeReceiver is AccessControl {
     // Events
-    event FeePaid(address indexed who, uint64 indexed nonce, uint256 indexed amount);
+    event FeePaid(address indexed who, uint8 indexed domain, uint64 indexed nonce, uint256 amount);
 
     // Constants
     bytes32 public constant RELAYER_ROLE = keccak256("RELAYER_ROLE");
@@ -76,10 +76,10 @@ contract RelayerFeeReceiver is AccessControl {
 
     // Public functions
 
-    // Pay the relayer fee for a given nonce
-    function payFee(uint64 nonce) external payable notPaused() {
+    // Pay the relayer fee for a given domain and nonce
+    function payFee(uint8 domain, uint64 nonce) external payable notPaused() {
         require(msg.value == currentFee, "Fee value is not correct");
-        emit FeePaid(msg.sender, nonce, currentFee);
+        emit FeePaid(msg.sender, domain, nonce, currentFee);
     }
 
     // Reject direct payments to contract iwthout a nonce
