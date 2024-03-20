@@ -69,6 +69,7 @@ if [[ $QUIET ]]; then
     --ws.origins="*" \
     --http \
     --http.corsdomain="*" \
+    --http.vhosts="*" \
     --allow-insecure-unlock \
     --mine \
     --miner.etherbase "0xff93B45308FD417dF303D6515aB04D9e89a750Ca" \
@@ -84,6 +85,7 @@ else
     --ws.origins="*" \
     --http \
     --http.corsdomain="*" \
+    --http.vhosts="*" \
     --allow-insecure-unlock \
     --mine \
     --miner.etherbase "0xff93B45308FD417dF303D6515aB04D9e89a750Ca" \
