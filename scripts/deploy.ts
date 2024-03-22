@@ -16,6 +16,7 @@ const expiry = 100;
 const relayerFee = ethers.parseEther("0.01");
 const resourceId =
   "0x26c3ecba0b7cea7c131a6aedf4774f96216318a2ae74926cd0e01832a0b0b500";
+const relayerFeeUpdater = "0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485";
 
 async function main() {
   const signers = await ethers.getSigners();
@@ -71,7 +72,7 @@ async function main() {
   );
   const relayerFeeReceiver = await relayerFeeReceiverFact
     .connect(admin)
-    .deploy(relayerFee, admin.address, deployer.address);
+    .deploy(relayerFee, admin.address, relayerFeeUpdater);
   await relayerFeeReceiver.waitForDeployment();
   const relayerFeeReceiverAddr = await relayerFeeReceiver.getAddress();
   console.log("RelayerFeeReceiver deployed to:", relayerFeeReceiverAddr);
