@@ -8,8 +8,12 @@
     "byzantiumBlock": 0,
     "constantinopleBlock": 0,
     "petersburgBlock": 0,
+    "istanbulBlock": 0,
+    "muirGlacierBlock": 0,
+    "berlinBlock": 0,
+    "londonBlock": 0,
     "clique": {
-      "period": 1,
+      "period": 5,
       "epoch": 30000
     }
   },
@@ -21,6 +25,11 @@
     "0x8e0a907331554AF72563Bd8D43051C2E64Be5d35": { "balance": "20000000000000000000"},
     "0x24962717f8fA5BA3b931bACaF9ac03924EB475a0": { "balance": "20000000000000000000"},
     "0x148FfB2074A9e59eD58142822b3eB3fcBffb0cd7": { "balance": "20000000000000000000"},
-    "0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485": { "balance": "20000000000000000000"}
+    "0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485": { "balance": "20000000000000000000"},
+    "0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC": { "balance": "10000000000000000000"},
+    "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266": { "balance": "10000000000000000000"},
+    "0x70997970C51812dc3A010C7d01b50e0d17dc79C8": { "balance": "10000000000000000000"},
+    "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC": { "balance": "10000000000000000000"},
+    "0x90F79bf6EB2c4f870365E785982E1f101E93b906": { "balance": "10000000000000000000"}
   }
 }
