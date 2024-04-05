@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compile": "npx hardhat compile",
+    "compile:mainnet": "COMPILE_MAINNET=true npx hardhat compile",
     "types": "npx hardhat typechain",
     "test": "npx hardhat --network hardhat test",
     "test:gas": "REPORT_GAS=true npx hardhat --network hardhat test",
@@ -13,7 +14,10 @@
     "stop:geth": "./scripts/geth/stop_geth.sh",
     "deploy": "npx hardhat run scripts/deploy.ts",
     "payfee": "npx hardhat run scripts/payfee.ts",
-    "mint": "npx hardhat run scripts/mint.ts"
+    "mint": "npx hardhat run scripts/mint.ts",
+    "deploy:test:sepolia": "COMPILE_MAINNET=true TESTING=true npx hardhat --network hardhat run scripts/deploy_sepolia.ts",
+    "deploy:test:ledger:sepolia": "COMPILE_MAINNET=true TESTING=true LEDGER=true npx hardhat --network hardhat run scripts/deploy_sepolia.ts",
+    "deploy:sepolia": "COMPILE_MAINNET=true npx hardhat --network testnet run scripts/deploy_sepolia.ts"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,7 @@
     "@nomicfoundation/hardhat-ledger": "^1.0.2",
     "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "dotenv": "^16.4.5",
-    "hardhat": "^2.21.0"
+    "hardhat": "^2.21.0",
+    "readline-sync": "1.4.10"
   }
 }

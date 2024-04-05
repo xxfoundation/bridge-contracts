@@ -27,6 +27,11 @@ const config: HardhatUserConfig = {
   },
   defaultNetwork: "local",
   networks: {
+    // Hardhat for deployment testing
+    hardhat: {
+      ledgerAccounts: ["0x70fFda7eef19d00EAe79ba041f1982016CA6ADd4"],
+    },
+
     // Local testing with geth node
     local: {
       url: "http://127.0.0.1:8545",
@@ -62,8 +67,11 @@ const config: HardhatUserConfig = {
       ],
     },
 
-    // TODO: define test network
-    // testnet: {},
+    // ETH Sepolia Testnet
+    testnet: {
+      url: "https://ethereum-sepolia-rpc.publicnode.com",
+      ledgerAccounts: ["0x70fFda7eef19d00EAe79ba041f1982016CA6ADd4"],
+    },
 
     // ETH mainnet
     mainnet: {

@@ -13,7 +13,7 @@ const relayerThreshold = 1;
 const bridgeFee = ethers.parseEther("0");
 const relayers = ["0xff93B45308FD417dF303D6515aB04D9e89a750Ca"];
 const expiry = 100;
-const relayerFee = ethers.parseEther("0.01");
+const relayerFee = ethers.parseEther("0.001");
 const resourceId =
   "0x26c3ecba0b7cea7c131a6aedf4774f96216318a2ae74926cd0e01832a0b0b500";
 const relayerFeeUpdater = "0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485";
