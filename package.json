@@ -17,7 +17,10 @@
     "mint": "npx hardhat run scripts/mint.ts",
     "deploy:test:sepolia": "COMPILE_MAINNET=true TESTING=true npx hardhat --network hardhat run scripts/deploy_sepolia.ts",
     "deploy:test:ledger:sepolia": "COMPILE_MAINNET=true TESTING=true LEDGER=true npx hardhat --network hardhat run scripts/deploy_sepolia.ts",
-    "deploy:sepolia": "COMPILE_MAINNET=true npx hardhat --network testnet run scripts/deploy_sepolia.ts"
+    "deploy:sepolia": "COMPILE_MAINNET=true npx hardhat --network testnet run scripts/deploy_sepolia.ts",
+    "deploy:test:mainnet": "COMPILE_MAINNET=true TESTING=true npx hardhat --network hardhat run scripts/deploy_mainnet.ts",
+    "deploy:test:ledger:mainnet": "COMPILE_MAINNET=true TESTING=true LEDGER=true npx hardhat --network hardhat run scripts/deploy_mainnet.ts",
+    "deploy:mainnet": "COMPILE_MAINNET=true npx hardhat --network mainnet run scripts/deploy_mainnet.ts"
   },
   "repository": {
     "type": "git",
