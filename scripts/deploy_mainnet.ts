@@ -28,12 +28,12 @@ const wrappedXXAddress = testmode
 const domainId = 1;
 const relayerThreshold = 1;
 const bridgeFee = ethers.parseEther("0");
-const relayers = ["0xff93B45308FD417dF303D6515aB04D9e89a750Ca"];
+const relayers = ["0x988E8a1853Ef62750021E4F663D762381a3d7570"];
 const expiry = 100;
 const relayerFee = ethers.parseEther("0.002");
 const resourceId =
   "0x26c3ecba0b7cea7c131a6aedf4774f96216318a2ae74926cd0e01832a0b0b500";
-const relayerFeeUpdater = "0x4CEEf6139f00F9F4535Ad19640Ff7A0137708485";
+const relayerFeeUpdater = "0x277d00749d28A748024390C6f876B82FF659B2C3";
 
 async function main() {
   const prompt = require("readline-sync");
