@@ -20,6 +20,16 @@ Then, deploy the contracts to the local ETH node
 npm run deploy
 ```
 
+## Mainnet Deployment
+
+Addresses of deployed contracts on Ethereum mainnet.
+```
+Bridge: 0x104977989515b040879226f293eAcBF342F39Ab7
+ERC20Handler: 0x2297db5f1775cdea3e9696e00a005996129283d8
+WrappedXX: 0x171120219d3223e008558654ec3254a0f206edb2
+RelayerFeeReceiver: 0x6e398fd37a69a417287cdbb1b0cfa41b63e03762
+```
+
 ## Sepolia Deployment
 
 Addresses of deployed contracts on Sepolia testnet.
